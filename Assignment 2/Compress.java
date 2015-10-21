@@ -74,7 +74,10 @@ public class Compress {
             // Compress the file
             compress(inputStream, outputStream);
         }
-        catch(DictionaryException | IOException ex) {
+        catch(DictionaryException ex) {
+            System.err.println(ex.getMessage());
+        }
+        catch(IOException ex) {
             System.err.println(ex.getMessage());
         }
         finally {
